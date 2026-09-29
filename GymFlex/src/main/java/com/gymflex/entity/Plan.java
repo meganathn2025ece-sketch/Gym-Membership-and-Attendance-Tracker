@@ -1,0 +1,3 @@
+package com.gymflex.entity;
+import jakarta.persistence.*; import java.math.BigDecimal;
+@Entity @Table(name="plans") public class Plan { @Id @GeneratedValue(strategy=GenerationType.IDENTITY) private Long id; @Column(nullable=false,unique=true) private String name; private int months; private BigDecimal price; public Plan(){} public Plan(Long id,String name,int months,BigDecimal price){this.id=id;this.name=name;this.months=months;this.price=price;} public Long getId(){return id;} public void setId(Long v){id=v;} public String getName(){return name;} public void setName(String v){name=v;} public int getMonths(){return months;} public void setMonths(int v){months=v;} public BigDecimal getPrice(){return price;} public void setPrice(BigDecimal v){price=v;} }

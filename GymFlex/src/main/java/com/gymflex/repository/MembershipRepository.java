@@ -1,0 +1,1 @@
+package com.gymflex.repository; import com.gymflex.entity.Membership; import org.springframework.data.jpa.repository.JpaRepository; import java.time.LocalDate; import java.util.*; public interface MembershipRepository extends JpaRepository<Membership,Long>{Optional<Membership> findByMemberId(Long id); List<Membership> findByEndDateBetween(LocalDate a,LocalDate b);}

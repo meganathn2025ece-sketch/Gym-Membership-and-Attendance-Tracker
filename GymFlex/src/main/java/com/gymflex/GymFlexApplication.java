@@ -1,0 +1,3 @@
+package com.gymflex;
+import com.gymflex.entity.Plan; import com.gymflex.repository.PlanRepository; import org.springframework.boot.*; import org.springframework.boot.autoconfigure.SpringBootApplication; import org.springframework.context.annotation.Bean; import java.math.BigDecimal;
+@SpringBootApplication public class GymFlexApplication { public static void main(String[] args){SpringApplication.run(GymFlexApplication.class,args);} @Bean CommandLineRunner plans(PlanRepository r){return a->{if(r.count()==0){r.save(new Plan(null,"Monthly",1,new BigDecimal("1000")));r.save(new Plan(null,"Quarterly",3,new BigDecimal("2700")));r.save(new Plan(null,"Yearly",12,new BigDecimal("10000")));}};}}
